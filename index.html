@@ -83,7 +83,7 @@
               <p>{{activity}}</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="http://www.google.com/search?q={{activity}}">tryie youre luckie</a>
             </div>
           </div>
       </div>
@@ -101,7 +101,7 @@
 
     // Get content and handle interaction
     $.ajax({
-      url: "https://www.boredapi.com/api/activity",
+      url: "http://www.boredapi.com/api/activity?participants=1",
     }).done(function (data) {
       console.log(data)
       randomActivityPlaceholder.innerHTML = randomActivityTemplate(data);
