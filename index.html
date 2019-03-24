@@ -72,7 +72,7 @@
   <!-- End Document body
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <!-- Handlebar templates
+  <!-- Handlebar template 1
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script id="random-activity-template" type="text/x-handlebars-template">
     <div class="row">
@@ -80,7 +80,17 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">{{type}}</span>
-              <p>{{activity}}</p>
+              <p>{{activity}}   
+                </p>
+                <p>
+                    hvordan virker dette lort? har virkeligt prøvet mit bedste for at få et nyt kort frem men den siger bare
+                </p>
+                <p>
+                    Cannot set property 'innerHTML' of null 
+                </p>
+                <p>
+                    føler mig meget dum btw
+                </p>
             </div>
             <div class="card-action">
               <a href="http://www.google.com/search?q={{activity}}">tryie youre luckie</a>
@@ -90,6 +100,25 @@
     </div>
 </script>
 
+ <!-- Handlebar template 2
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script id="random-activity-template2" type="text/x-handlebars-template">
+  <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">{{type}}</span>
+            <p>{{activity}}</p>
+          </div>
+          <div class="card-action">
+            <a href="http://www.google.com/search?q={{activity}}">tryie youre luckie</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</script>
+
+
   <!-- Page functionality
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script>
@@ -98,6 +127,9 @@
     var randomActivityTemplate = Handlebars.compile(randomActivitySource);
     var randomActivityPlaceholder = document.getElementById('random-activity');
 
+    var randomActivitySource2 = document.getElementById("random-activity-template2").innerHTML;
+    var randomActivityTemplate2 = Handlebars.compile(randomActivitySource2);
+    var randomActivityPlaceholder2 = document.getElementById('random-activity2');
 
     // Get content and handle interaction
     $.ajax({
@@ -106,8 +138,25 @@
       console.log(data)
       randomActivityPlaceholder.innerHTML = randomActivityTemplate(data);
     });
+   // ajax2
+    $.ajax({
+      url: "http://www.boredapi.com/api/activity?participants=1",
+    }).done(function (data2) {
+      console.log(data2)
+      randomActivityPlaceholder2.innerHTML = randomActivityTemplate2(data2);
+    });
+    
   </script>
 
+<script>
+
+$(function() {
+
+$("#random-activity").delay(2000).toggle(5000).toggleslide(5000).toggleslide(5000).toggleslide(5000);
+
+});
+
+</script>
 </body>
 
 </html>
