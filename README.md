@@ -12,3 +12,13 @@ Dette er endnu en grund til at forkaste dig til fødderne af google, det eneste 
 Derpibooru:
 Dette er databasen som har alt JSON dataen og det er dem jeg kalder på for at få fat på mine billeder og mit data.
 
+Der var især et specifikt sted i koden hvor jeg fik brug for hjælp, jeg havde et problem. Jeg ville gerne kunne sortere efter hvilke "tags" der skulle vises i mit kode. Jeg havde ingen anelse til hvordan jeg skulle gøre dette, men heldigvis var der en dejlig klassekamerat, navnligt Hampus, som der hjalp mig med dette. Han sagde at jeg skulle lave et "forloop", eller "foreachloop". 
+Jeg lavede først en string som jeg puttede alle tags jeg ikke kunne lide ind i. Herefter skrev jeg således
+
+banned.forEach(ban => {
+              if (data.tags.includes(ban)) {
+                shitsbanned = true;
+              }
+            });
+            
+Som man nok også kan se kom der en til variabel navnligt "shitsbanned" ind i koden, længere nede siger jeg så at hvis "shitsbanned" er sandt skal vi starte processen om igen. Dette syntes jeg var ekstremt sejt så shoutout til hampus og hans forloops.
